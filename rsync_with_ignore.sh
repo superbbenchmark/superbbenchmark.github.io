@@ -14,7 +14,7 @@ shift
 tgt_dir=$1
 shift
 
-ignore_files="CNAME LICENSE README.md .gitignore"
+ignore_files="CNAME LICENSE README.md .gitignore 404.html"
 for ignore_file in $ignore_files;
 do
     if [ ! -f $ignore_file ]; then
