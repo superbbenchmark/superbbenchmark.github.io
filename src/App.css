@@ -1,0 +1,69 @@
+html {
+  overflow-y:scroll;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: #5DADE2;
+}
+
+.App {
+  text-align: center;
+  margin: auto;
+}
+
+.unlink {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+table th, table td {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+}
+
+table tr {
+  background-color: #fafafa;
+  border-top: 1px solid #ccc;
+}
+
+table tr:nth-child(2n) {
+  background-color: #efefef;
+}
