@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/superb-website/static/css/main.3e34810a.chunk.css",
-    "main.js": "/superb-website/static/js/main.2a376ef4.chunk.js",
-    "main.js.map": "/superb-website/static/js/main.2a376ef4.chunk.js.map",
-    "runtime-main.js": "/superb-website/static/js/runtime-main.d7d17892.js",
-    "runtime-main.js.map": "/superb-website/static/js/runtime-main.d7d17892.js.map",
-    "static/css/2.bcb4bff2.chunk.css": "/superb-website/static/css/2.bcb4bff2.chunk.css",
-    "static/js/2.bd1f99cb.chunk.js": "/superb-website/static/js/2.bd1f99cb.chunk.js",
-    "static/js/2.bd1f99cb.chunk.js.map": "/superb-website/static/js/2.bd1f99cb.chunk.js.map",
-    "static/js/3.d9ba306f.chunk.js": "/superb-website/static/js/3.d9ba306f.chunk.js",
-    "static/js/3.d9ba306f.chunk.js.map": "/superb-website/static/js/3.d9ba306f.chunk.js.map",
-    "index.html": "/superb-website/index.html",
-    "static/css/2.bcb4bff2.chunk.css.map": "/superb-website/static/css/2.bcb4bff2.chunk.css.map",
-    "static/css/main.3e34810a.chunk.css.map": "/superb-website/static/css/main.3e34810a.chunk.css.map",
-    "static/js/2.bd1f99cb.chunk.js.LICENSE.txt": "/superb-website/static/js/2.bd1f99cb.chunk.js.LICENSE.txt",
-    "static/media/katex.min.css": "/superb-website/static/media/KaTeX_Typewriter-Regular.9f1a86cb.woff"
+    "main.css": "/static/css/main.3e34810a.chunk.css",
+    "main.js": "/static/js/main.2a376ef4.chunk.js",
+    "main.js.map": "/static/js/main.2a376ef4.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.acf43704.js",
+    "runtime-main.js.map": "/static/js/runtime-main.acf43704.js.map",
+    "static/css/2.2635892e.chunk.css": "/static/css/2.2635892e.chunk.css",
+    "static/js/2.700a0403.chunk.js": "/static/js/2.700a0403.chunk.js",
+    "static/js/2.700a0403.chunk.js.map": "/static/js/2.700a0403.chunk.js.map",
+    "static/js/3.d9ba306f.chunk.js": "/static/js/3.d9ba306f.chunk.js",
+    "static/js/3.d9ba306f.chunk.js.map": "/static/js/3.d9ba306f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.2635892e.chunk.css.map": "/static/css/2.2635892e.chunk.css.map",
+    "static/css/main.3e34810a.chunk.css.map": "/static/css/main.3e34810a.chunk.css.map",
+    "static/js/2.700a0403.chunk.js.LICENSE.txt": "/static/js/2.700a0403.chunk.js.LICENSE.txt",
+    "static/media/katex.min.css": "/static/media/KaTeX_Typewriter-Regular.9f1a86cb.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.d7d17892.js",
-    "static/css/2.bcb4bff2.chunk.css",
-    "static/js/2.bd1f99cb.chunk.js",
+    "static/js/runtime-main.acf43704.js",
+    "static/css/2.2635892e.chunk.css",
+    "static/js/2.700a0403.chunk.js",
     "static/css/main.3e34810a.chunk.css",
     "static/js/main.2a376ef4.chunk.js"
   ]
