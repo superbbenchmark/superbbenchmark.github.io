@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import {
-    HashRouter as Router,
+    BrowserRouter as Router,
     Switch,
     Route,
     Redirect,
@@ -93,7 +93,12 @@ function App() {
                         tableControlRef={tableControlRef}
                     />
                 </Route>
-                <Route path="/challenge">
+                <Route path="/challenge-aaai2022">
+                    <div className={`${classes.narrowViewport}`}>
+                        <Challenge />
+                    </div>
+                </Route>
+                <Route path="/challenge-slt2023">
                     <div className={`${classes.narrowViewport}`}>
                         <Challenge />
                     </div>
@@ -140,7 +145,12 @@ function App() {
                         tableControlRef={tableControlRef}
                     />
                 </Route>
-                <Route path="/challenge">
+                <Route path="/challenge-aaai2022">
+                    <div className={`${classes.narrowViewport}`}>
+                        <Challenge />
+                    </div>
+                </Route>
+                <Route path="/challenge-slt2023">
                     <div className={`${classes.narrowViewport}`}>
                         <Challenge />
                     </div>

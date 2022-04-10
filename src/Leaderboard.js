@@ -18,13 +18,10 @@ import Model from "./components/Modal";
 import TrackSelect from "./components/TrackSelect";
 import SubsetSelect from "./components/SubsetSelect";
 import { overall_metric_adder } from "./overall_metrics";
-import { NumericalSort, is_number_and_not_nan } from "./components/Utilies";
+import { NumericalSort, is_number_and_not_nan, CapitalizeLetter } from "./components/Utilies";
 import { Box, Divider } from "@material-ui/core";
 import { useLocation } from "react-router-dom";
 import { AuthContext } from "./context/auth-context";
-import * as public_data from "./data/public.json";
-import * as hidden_data from "./data/hidden-dev.json";
-
 
 const Styles = styled.div`
   .table {
@@ -285,57 +282,72 @@ function LeaderBoard(props) {
     };
 
     const getLeaderboard = async () => {
-        // public data
-        setLeaderboardData(public_data.leaderboard);
-        setLeaderboardShownData(public_data.leaderboard.filter((data) => mapping_array[data.task] === task));
+        await axios
+            .get("/api/submission/leaderboard")
+            .then((res) => {
+                setLeaderboardData(res.data.leaderboard);
+                setLeaderboardShownData(res.data.leaderboard.filter((data) => mapping_array[data.task] === task));
+            })
+            .catch((error) => {
+                console.error(error);
+            });
 
-        let leaderboardData = hidden_data.leaderboard;
-        function all_not_nan(submission) {
-            for (let accessor of hidden_dev_set) {
-                if(! is_number_and_not_nan(submission[accessor])) {
-                    return false;
-                }
-            }
-            return true;
-        }
-        leaderboardData = leaderboardData.filter(submission => all_not_nan(submission));
-
-        if (leaderboardData.length > 0) {
-            let newShownData = []
-            let names = new Set(leaderboardData.map(data => data.name));
-            for (let name of names) {
-                let submissions = leaderboardData.filter(data => data.name === name);
-
-                if (submissions.length < 1) {
-                    continue;
-                }
-                if (name.includes("baseline")) {
-                    newShownData.push(...submissions);
-                    continue;
-                }
-
-                let userEmail = auth.email;
-                for (let submission of submissions) {
-                    if (submission.email != userEmail) {
-                        submission.name = "-";
-                        submission.submitName = "-";
-                        submission.modelDesc = "-";
+        await axios({
+            method: "get",
+            url: "/api/hiddensubmission/leaderboard",
+        })
+            .then((res) => {
+                let leaderboardData = res.data.leaderboard;
+                function all_not_nan(submission) {
+                    for (let accessor of hidden_dev_set) {
+                        if(! is_number_and_not_nan(submission[accessor])) {
+                            return false;
+                        }
                     }
+                    return true;
                 }
+                leaderboardData = leaderboardData.filter(submission => all_not_nan(submission));
 
-                let selected = submissions.reduce((a, b) => (a.showOnLeaderboard === "YES") || (b.showOnLeaderboard === "YES"), {
-                    showOnLeaderboard: false,
-                })
-                if (selected) {
-                    newShownData.push(...submissions.filter(data => data.showOnLeaderboard));
+                if (leaderboardData.length > 0) {
+                    let newShownData = []
+                    let names = new Set(leaderboardData.map(data => data.name));
+                    for (let name of names) {
+                        let submissions = leaderboardData.filter(data => data.name === name);
+
+                        if (submissions.length < 1) {
+                            continue;
+                        }
+                        if (name.includes("baseline")) {
+                            newShownData.push(...submissions);
+                            continue;
+                        }
+
+                        let userEmail = auth.email;
+                        for (let submission of submissions) {
+                            if (submission.email != userEmail) {
+                                submission.name = "-";
+                                submission.submitName = "-";
+                                submission.modelDesc = "-";
+                            }
+                        }
+
+                        let selected = submissions.reduce((a, b) => (a.showOnLeaderboard === "YES") || (b.showOnLeaderboard === "YES"), {
+                            showOnLeaderboard: false,
+                        })
+                        if (selected) {
+                            newShownData.push(...submissions.filter(data => data.showOnLeaderboard));
+                        }
+                        else {
+                            newShownData.push(...submissions);
+                        }
+                    }
+                    setLeaderboardHiddenData(newShownData);
+                    setLeaderboardHiddenShownData(newShownData);
                 }
-                else {
-                    newShownData.push(...submissions);
-                }
-            }
-            setLeaderboardHiddenData(newShownData);
-            setLeaderboardHiddenShownData(newShownData);
-        }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     };
 
     const onTaskChange = (e) => {

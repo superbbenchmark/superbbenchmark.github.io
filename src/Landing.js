@@ -34,7 +34,9 @@ export default function Landing(props) {
     return (
         <Box ref={ref} margin={theme.spacing(0, 0, 8)}>
             <Box margin={theme.spacing(8, "auto", 1)}>
-                <img src="logo-color.png" style={{width: "40%", textAlign: "left"}} />
+                <Typography variant="h2" color="textPrimary">
+                    <strong>SUPERB</strong>
+                </Typography>
             </Box>
             <Box margin={theme.spacing(1, "auto", 6)}>
                 <Typography
@@ -57,11 +59,11 @@ export default function Landing(props) {
                     <strong>2021 SUPERB Challenge Timeline</strong>
                 </Typography>
                 <span align="left">
-                    <HashLink to="/challenge#top">Challenge Policy</HashLink>
+                    <HashLink to="/challenge-aaai2022#top">Challenge Policy</HashLink>
                     <ul>
                         <li><span><Strong>Sep 18, 2021</Strong>: <HashLink to="/news#announcement2021">Challenge announcement</HashLink> &amp; </span><a
                             href="https://github.com/s3prl/s3prl" target="_blank" rel="noopener"><span>S3PRL</span></a><span> released</span></li>
-                        <li><span><Strong>Sep 30, 2021</Strong>: <HashLink to="/challenge#Overall-Metrics">Overall metrics</HashLink> announcement &amp; </span>
+                        <li><span><Strong>Sep 30, 2021</Strong>: <HashLink to="/challenge-aaai2022#Overall-Metrics">Overall metrics</HashLink> announcement &amp; </span>
                             <HashLink to="/leaderboard?subset=Public+Set&track=constrained">public-set leaderboard</HashLink>
                             <span> is online and <HashLink to="/submit?type=public">accepts submissions</HashLink></span></li>
                         <li><span><Strong>Oct 15, 2021</Strong>: <HashLink to="/leaderboard?subset=Hidden+Dev+Set&track=constrained">Hidden-set leaderboard</HashLink> is online and <HashLink to="/submit?type=hidden">accepts submissions</HashLink></span></li>
@@ -168,7 +170,7 @@ export default function Landing(props) {
                     </SubSubSection>
                     <SubSubSection>
                         <Typography variant="body1" color="textSecondary">
-                            We also want to let you know that <a href="https://signalprocessingsociety.org/blog/ieee-jstsp-special-issue-self-supervised-learning-speech-and-audio-processing" target="_blank" rel="noopener noreferrer">IEEE JSTSP Special Issue on Self-Supervised Learning for Speech and Audio Processing</a> is call-for-paper.The deadline is <Strong>January 15, 2022</Strong>.The research based on SUPERB will be very suitable for the special issue. If you want to submit to the special issue but have problems meeting the deadline, please feel free to contact Hung-yi Lee (<a href="mailto:hungyilee@ntu.edu.tw" target="_blank" rel="noopener noreferrer">hungyilee@ntu.edu.tw</a>).
+                            We also want to let you know that <a href="https://signalprocessingsociety.org/blog/ieee-jstsp-special-issue-self-supervised-learning-speech-and-audio-processing" target="_blank" rel="noopener noreferrer">IEEE JSTSP Special Issue on Self-Supervised Learning for Speech and Audio Processing</a> is call-for-paper.The deadline is <Strong>December 31, 2021</Strong>.The research based on SUPERB will be very suitable for the special issue.If you have any questions about the special issue, please feel free to contact Hung-yi Lee (<a href="mailto:hungyilee@ntu.edu.tw" target="_blank" rel="noopener noreferrer">hungyilee@ntu.edu.tw</a>).
                         </Typography>
                     </SubSubSection>
                 </SubSection>
